@@ -1,0 +1,275 @@
+/* =======================
+   Base Styles
+======================= */
+body, html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+html {
+    background-color: #ffffff;
+    color: #1f2937; /* gray-800 */
+}
+
+html.dark {
+    background-color: #0a0a0a;
+    color: #f3f4f6; /* gray-100 */
+}
+
+/* =======================
+   Section Backgrounds
+======================= */
+section {
+    transition: background 0.3s, color 0.3s;
+}
+
+#hero {
+    background: linear-gradient(to bottom right, #3b82f6, #1e40af);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+#about {
+    background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+}
+
+#experience {
+    background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+
+#skills {
+    background: linear-gradient(to bottom, #f9fafb, #e5e7eb);
+}
+
+#contact {
+    background: linear-gradient(to bottom, #ffffff, #f3f4f6);
+}
+
+/* Dark mode gradients */
+html.dark #about, html.dark #skills {
+    background: linear-gradient(to bottom, #1f2937, #111827);
+}
+
+html.dark #experience, html.dark #contact {
+    background: linear-gradient(to bottom, #111827, #0a0a0a);
+}
+
+/* =======================
+   Hero Section Styles
+======================= */
+#hero h1 {
+     font-size: 4rem;
+   font-weight: 800;
+    color: #0c0909;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+
+#hero h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #e0f2fe;
+    margin-top: 0.5rem;
+}
+
+#hero p {
+    font-size: 1.125rem;
+    color: #dbeafe;
+    max-width: 600px;
+    margin-top: 1rem;
+}
+
+#hero .fade-in a {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+#hero .fade-in a:first-child {
+    background-color: #ffffff;
+    color: #1e40af;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#hero .fade-in a:first-child:hover {
+    background-color: #f3f4f6;
+}
+
+#hero .fade-in a:last-child {
+    background-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#hero .fade-in a:last-child:hover {
+    background-color: #1e40af;
+}
+
+#hero img {
+    border-radius: 50%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#hero img:hover {
+    transform: scale(1.05);
+}
+
+html.dark #hero img {
+    ring-color: #2563eb;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* =======================
+   Headings & Text
+======================= */
+h1, h2, h3, h4 {
+    transition: color 0.3s;
+}
+
+h1, h2 {
+    color: #040c20;
+}
+
+html.dark h1, html.dark h2 {
+    color: #010509;
+}
+
+p, li, a {
+    transition: color 0.3s;
+}
+
+a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2563eb;
+}
+
+html.dark a {
+    color: #050e1a;
+}
+
+html.dark a:hover {
+    color: #3b82f6;
+}
+
+/* =======================
+   Buttons & Skill Cards
+======================= */
+button, .skill-card, .fade-in a {
+    transition: all 0.3s ease;
+}
+
+button, .fade-in a {
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+button:hover, .fade-in a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.skill-card {
+    background: #ffffff;
+    color: #1f2937;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    background: #2563eb;
+    color: #ffffff;
+}
+
+html.dark .skill-card {
+    background: #1f2937;
+    color: #f3f4f6;
+}
+
+html.dark .skill-card:hover {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+/* =======================
+   Animations
+======================= */
+.fade-in, .slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.opacity-100.translate-y-0 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes bounce-hover {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.hover-bounce {
+    animation: bounce-hover 0.5s ease forwards;
+}
+
+/* =======================
+   Navbar
+======================= */
+nav {
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+nav a {
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #1e40af;
+}
+
+html.dark nav a:hover {
+    color: #93c5fd;
+}
+
+/* =======================
+   Images
+======================= */
+img {
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* =======================
+   Misc
+======================= */
+svg {
+    transition: color 0.3s, fill 0.3s;
+}

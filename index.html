@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ahmed's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="theme.js"></script>
+</head>
+<body class="text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+<!-- Navigation Bar -->
+<nav class="sticky top-0 z-50 w-full bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md shadow-sm dark:shadow-blue-900/10">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-600 dark:text-blue-400">Mohamed Ahmed</a>
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-900 dark:text-gray-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-6">
+            <a href="#hero" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-200">Home</a>
+            <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-200">About</a>
+            <a href="#experience" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-200">Experience</a>
+            <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-200">Skills</a>
+            <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition duration-200">Contact</a>
+        </div>
+
+        <button onclick="toggleTheme()" class="hidden md:block p-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-800 transition duration-200">
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.364-8.364l-.707-.707M4.343 4.343l-.707-.707m16.97 0l-.707.707M4.343 19.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+            </svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-neutral-900/90 backdrop-blur-md">
+        <a href="#hero" class="block py-2 px-6 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900">Home</a>
+        <a href="#about" class="block py-2 px-6 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900">About</a>
+        <a href="#experience" class="block py-2 px-6 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900">Experience</a>
+        <a href="#skills" class="block py-2 px-6 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900">Skills</a>
+        <a href="#contact" class="block py-2 px-6 text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900">Contact</a>
+        <div class="p-4 flex justify-center">
+            <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-neutral-800 transition duration-200">
+                <svg id="moon-icon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+                <svg id="sun-icon-mobile" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-400 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.364-8.364l-.707-.707M4.343 4.343l-.707-.707m16.97 0l-.707.707M4.343 19.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<section id="hero" class="relative overflow-hidden pt-20 pb-32">
+  <div class="container mx-auto px-6 z-10 relative flex flex-col md:flex-row items-center justify-between">
+    
+    <!-- النصوص -->
+    <div class="w-full md:w-1/2 text-center md:text-left">
+      <span class="text-white font-semibold text-lg fade-in">Welcome to my Portfolio!</span>
+      <h1 class="text-4xl md:text-6xl font-extrabold my-4 fade-in">I'm Mohamed Ahmed</h1>
+      <h2 class="text-2xl md:text-3xl font-medium fade-in" style="animation-delay:0.3s;">Computer Engineering Student</h2>
+      <p class="mt-4 text-lg max-w-lg mx-auto md:mx-0 fade-in" style="animation-delay:0.5s">
+        Motivated and forward-thinking Computer Engineering student equipped with a solid background in programming, hardware systems, and analytical thinking. Actively looking for opportunities to apply my knowledge and contribute to innovative tech developments.
+      </p>
+
+      <!-- أزرار GitHub و LinkedIn -->
+      <div class="mt-8 flex justify-center md:justify-start space-x-4 hero-buttons fade-in" style="animation-delay:0.7s">
+        <a href="#" target="_blank" class="github-btn flex items-center justify-center px-6 py-3 rounded-lg font-semibold">
+          <ion-icon name="logo-github" class="text-2xl mr-2"></ion-icon>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mohamed-ahmed-04833b343" target="_blank" class="linkedin-btn flex items-center justify-center px-6 py-3 rounded-lg font-semibold">
+          <ion-icon name="logo-linkedin" class="text-2xl mr-2"></ion-icon>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- الصورة -->
+    <div class="mt-12 md:mt-0 w-48 h-48 md:w-80 md:h-80 bg-gradient-to-br from-blue-500 to-blue-700 dark:from-blue-600 dark:to-blue-800 rounded-full flex items-center justify-center shadow-2xl overflow-hidden bounce">
+      <img src="images/photo.png" alt="Mohamed Ahmed" class="w-full h-full object-cover rounded-full" 
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 md:h-40 md:w-40 text-white hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    </div>
+    
+  </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-gray-50 dark:bg-neutral-900 slide-up">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-600 dark:text-blue-400 fade-in">About Me</h2>
+    <div class="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto fade-in" style="animation-delay:0.2s">
+        <div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Education</h3>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <h4 class="text-xl font-bold">B.Sc. in Computer and Systems Engineering</h4>
+                <p class="font-medium text-gray-700 dark:text-gray-300">Helwan University | Cairo, Egypt</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">2023 - Present (Sophomore)</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">GPA: 3.75</p>
+                <p class="text-gray-600 dark:text-gray-300 mt-3">
+                    <strong>Relevant Coursework:</strong> Data Structures & Algorithms, OOP & Programing Techniques, Electronics, Circuits theory.
+                </p>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="py-20 bg-white dark:bg-neutral-800 slide-up" style="animation-delay:0.3s">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-600 dark:text-blue-400 fade-in">My Experience</h2>
+    <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 fade-in" style="animation-delay:0.5s">
+        <div class="bg-gray-50 dark:bg-neutral-900 p-6 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Java Developer</h3>
+            <p class="text-sm font-medium text-blue-600 dark:text-blue-400">Self-initiated Academic Project</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Apr 2025 - May 2025</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Built the exam interface for a collaborative exam management system using JavaFX and MySQL.</li>
+                <li>Designed and developed the exam page, allowing students to view and submit answers.</li>
+                <li>Implemented student login and exam access features with MySQL integration.</li>
+                <li>Collaborated with team members to connect frontend with backend logic.</li>
+            </ul>
+        </div>
+        <div class="bg-gray-50 dark:bg-neutral-900 p-6 rounded-xl shadow-md">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Python Developer</h3>
+            <p class="text-sm font-medium text-blue-600 dark:text-blue-400">Data Analysis & Visualization</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Jan 2025 - Mar 2025</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                <li>Analyzed Titanic and car datasets using Pandas and Matplotlib.</li>
+                <li>Generated insights and visualized patterns using different charts.</li>
+                <li>Implemented data cleaning and preprocessing pipelines.</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50 dark:bg-neutral-900">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-600 dark:text-blue-400 fade-in">My Skills</h2>
+
+    <div class="max-w-4xl mx-auto grid gap-6">
+
+      <!-- Soft Skills -->
+      <div class="fade-in">
+        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Soft Skills</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Problem-solving
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Team Collaboration
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Communication
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Time Management
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Adaptability
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Leadership
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="fade-in">
+        <h3 class="text-2xl font-semibold mb-6 text-center text-gray-900 dark:text-white">Technical Skills</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Python
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            C++
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Java
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            JavaScript
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            JavaFX, SceneBuilder
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            MySQL
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            Pandas, Matplotlib
+          </div>
+          <div class="skill-card bg-white dark:bg-neutral-800 p-4 rounded-xl shadow-md cursor-pointer text-gray-900 dark:text-gray-100 text-center font-medium">
+            TailwindCSS, Git, VSCode
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50 dark:bg-neutral-900 slide-up" style="animation-delay:0.5s">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold mb-12 text-blue-600 dark:text-blue-400 fade-in">Contact Me</h2>
+    <p class="text-gray-700 dark:text-gray-300 mb-6 fade-in">Email: <a href="mailto:mohamed.ahmed@example.com" class="text-blue-600 dark:text-blue-400">mohamedahmedkamal664@gmail.com</a></p>
+    <p class="text-gray-700 dark:text-gray-300 mb-6 fade-in">Phone: +20 01154050267</p>
+    <div class="flex justify-center space-x-4 fade-in">
+        <a href="https://github.com/mohamedahmed" target="_blank" class="px-6 py-3 bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-900 rounded-lg font-semibold hover:bg-gray-700 dark:hover:bg-white transition duration-300">
+            GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mohamed-ahmed-04833b343" target="_blank" class="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition duration-300">
+            LinkedIn
+        </a>
+    </div>
+  </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
