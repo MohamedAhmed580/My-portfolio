@@ -273,3 +273,6 @@ img:hover {
 svg {
     transition: color 0.3s, fill 0.3s;
 }
+html {
+    scroll-padding-top: 90px;
+}
